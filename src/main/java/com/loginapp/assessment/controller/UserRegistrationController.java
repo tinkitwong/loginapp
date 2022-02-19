@@ -20,20 +20,20 @@ public class UserRegistrationController {
 		this.userService = userService;
 	}
 	
-	@GetMapping
-	public String showRegisterForm() {
-		return "registration";
-	}
-	
 	/* register.html ${user} gets user object here */
 	@ModelAttribute("user")
 	public UserRegistrationDto userRegister() {
 		return new UserRegistrationDto();
 	}
 	
+	@GetMapping
+	public String showRegisterForm() {
+		return "registration";
+	}
+	
 	@PostMapping
 	public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
 		userService.save(registrationDto);
-		return  "redirect:/registration?sucess";
+		return  "redirect:/registration?success";
 	}
 }
