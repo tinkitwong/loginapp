@@ -7,5 +7,5 @@ import com.loginapp.assessment.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository <User, Long> {
-
+	User findByEmail(String email);
 }
