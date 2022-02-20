@@ -18,7 +18,7 @@ import com.loginapp.assessment.repository.UserRepository;
 import com.loginapp.assessment.dto.UserRegistrationDto;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
 	
@@ -52,5 +52,6 @@ public class UserServiceImpl implements UserService{
 	private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){
 		return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 	}
+	
 	
 }
